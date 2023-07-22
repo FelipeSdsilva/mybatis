@@ -41,7 +41,7 @@ public class ProductDTO {
         return description;
     }
 
-    public void setDescription(String desccription) {
-        this.description = desccription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
