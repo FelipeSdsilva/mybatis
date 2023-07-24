@@ -12,7 +12,7 @@ public interface ProductRepository {
     @Insert("INSERT INTO tb_products (name, description) VALUES (#{name}, #{description})")
     void insert(Product product);
 
-    @Select("SELECT * FROM tb_products WHEIE id = #{id}")
+    @Select("SELECT * FROM tb_products WHERE id = #{id}")
     Product getById(Long id);
 
     @Select("SELECT * FROM tb_products")
