@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    @Autowired(required = true)
+    @Autowired
     private ProductRepository repository;
 
     @Transactional(readOnly = true)
@@ -19,5 +19,8 @@ public class ProductService {
         return repository.listAllproduct().stream().map(ProductDTO::new).toList();
     }
 
-
+    @Transactional(readOnly = true)
+    public ProductDTO findProductById(Long id) {
+        return new ProductDTO(repository.getById(id));
+    }
 }
